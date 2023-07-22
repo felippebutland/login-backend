@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mongo:
+      image: mongo:latest
+      volumes:
+        - mongodb_data_container:/data/db
+      ports:
+        - "27017:27017"
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: admin
+
+volumes:
+  mongodb_data_container:
