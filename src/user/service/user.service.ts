@@ -88,7 +88,7 @@ export class UserService {
       throw new HttpException('User not found', 404);
     }
 
-    if (user.recoverPassword === params.recoverToken) {
+    if (user.recoverPassword !== params.recoverToken) {
       return;
     }
 
