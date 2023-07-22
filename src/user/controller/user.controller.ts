@@ -11,7 +11,19 @@ export class UserController {
   }
 
   @Patch()
-  async updateStatus(@Body() token: string, @Body() email: string) {
-    return this.userService.updateStatus(token, email);
+  async updateStatus(@Body() params: { token: string; email: string }) {
+    return this.userService.updateStatus(params.token, params.email);
+  }
+
+  @Post('recover-password')
+  async sendRecoverPasswordEmail(
+    @Body()
+    params: {
+      recoverToken: string;
+      email: string;
+      newPassword: string;
+    },
+  ) {
+    return this.userService.recoverToken(params);
   }
 }

@@ -26,4 +26,8 @@ export class UserRepository {
   async updateUser(user: Partial<UserDto>, id: string): Promise<void> {
     await this.userModel.updateOne({ _id: id }, user).exec();
   }
+
+  async updateUserByEmail(params: Partial<UserDto>): Promise<void> {
+    await this.userModel.updateOne({ email: params.email }, params).exec();
+  }
 }

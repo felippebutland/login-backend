@@ -26,6 +26,9 @@ export class User extends Document {
 
   @Prop()
   updatedAt: Date;
+
+  @Prop()
+  recoverPassword: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

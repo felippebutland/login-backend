@@ -11,6 +11,13 @@ type UserDto = {
   name: string;
   email: string;
   verified: boolean;
+  password: string;
   cellphone: string;
   verifyToken: string;
+  recoverPassword: string;
+};
+
+type LoginDto = {
+  email: string;
+  password: string;
 };
